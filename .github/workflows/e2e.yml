@@ -1,0 +1,41 @@
+name: Gauge e2e tests
+
+# trigger e2e test run when pre-release is created
+on: [pull_request]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: |
+          npm ci
+      - name: Run tests
+        run: |
+          npm run automated
+        env:
+          CI: true
+          SUITEST_TEST_PACK_ID: ${{ secrets.TEST_PACK_ID }}
+          SUITEST_TOKEN_KEY: ${{ secrets.TOKEN_KEY }}
+          SUITEST_TOKEN_PASSWORD: ${{ secrets.TOKEN_PASSWORD }}
+      - name: Generate HTML report
+        run: |
+          npm run report:html
+        if: success() || failure()
+      - name: Archive the reports and save them as artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: E2e report
+          path: report
+        if: success() || failure()
