@@ -31,7 +31,7 @@ jobs:
           SUITEST_TOKEN_PASSWORD: ${{ secrets.TOKEN_PASSWORD }}
       - name: Generate HTML report
         run: |
-          npm run report:html
+          [ -f report/cucumber_report.json ] && npm run report:html
         if: success() || failure()
       - name: Archive the reports and save them as artifact
         uses: actions/upload-artifact@v1
