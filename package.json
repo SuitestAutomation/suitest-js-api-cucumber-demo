@@ -11,8 +11,8 @@
     "interactive:image": "suitest interactive cucumber-js --tags \\\"@e2e and @image\\\" -f json:report/cucumber_report.json",
     "interactive:category": "suitest interactive cucumber-js --tags \\\"@e2e and @category\\\" -f json:report/cucumber_report.json",
     "interactive:smoke": "suitest interactive cucumber-js --tags \\\"@smoke\\\" -f json:report/cucumber_report.json",
-    "automated": "suitest automated -t=$SUITEST_TEST_PACK_ID -k=$SUITEST_TOKEN_KEY -p=$SUITEST_TOKEN_PASSWORD cucumber-js --tags \\\"@e2e\\\"",
-    "automated:smoke": "suitest automated -t=$SUITEST_TEST_PACK_ID -k=$SUITEST_TOKEN_KEY -p=$SUITEST_TOKEN_PASSWORD cucumber-js --tags \\\"@smoke\\\"",
+    "automated": "suitest automated -t=$SUITEST_TEST_PACK_ID -k=$SUITEST_TOKEN_KEY -p=$SUITEST_TOKEN_PASSWORD cucumber-js --tags \\\"@e2e\\\" -f json:report/'\"${SUITEST_CHILD_PROCESS%%|*}\"'.json",
+    "automated:smoke": "suitest automated -t=$SUITEST_TEST_PACK_ID -k=$SUITEST_TOKEN_KEY -p=$SUITEST_TOKEN_PASSWORD cucumber-js --tags \\\"@smoke\\\" -f json:report/'\"${SUITEST_CHILD_PROCESS%%|*}\"'.json",
     "report:html": "node ./report.js"
   },
   "devDependencies": {
