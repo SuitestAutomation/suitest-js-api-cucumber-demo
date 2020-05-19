@@ -3,8 +3,7 @@ const suitest = require('suitest-js-api');
 
 Before(async () => {
 	// Before each scenario - start new Suitest test
-	// We do not need a unique id, it's not used with Cucumber
-	await suitest.startTest('Suitest test');
+	await suitest.startTest();
 });
 
 AfterAll(async () => {
