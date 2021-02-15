@@ -1,8 +1,11 @@
 {
+  "username": "",
+  "password": "",
   "orgId": "",
   "deviceId": "",
   "appConfigId": "",
   "logLevel": "normal",
+
   "testPackId": "",
   "tokenKey": "",
   "tokenPassword": ""
