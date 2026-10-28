@@ -6,19 +6,18 @@
   "license": "MIT",
   "scripts": {
     "start": "suitest run cucumber-js --tags \\\"@e2e\\\" -f json:report/cucumber_report.json -f summary",
-    "start:junit": "suitest run cucumber-js --tags \\\"@e2e\\\" -f node_modules/cucumber-junit-formatter:report/cucumber_report.xml -f summary",
+    "start:junit": "suitest run cucumber-js --tags \\\"@e2e\\\" -f junit:report/cucumber_report.xml -f summary",
     "start:home": "suitest run cucumber-js --tags \\\"@e2e and @home\\\" -f json:report/cucumber_report.json -f summary",
     "start:video": "suitest run cucumber-js --tags \\\"@e2e and @video\\\" -f json:report/cucumber_report.json -f summary",
     "start:smoke": "suitest run cucumber-js --tags \\\"@smoke\\\" -f json:report/cucumber_report.json -f summary",
-    "parallel": "suitest run --config-file=.suitestrc.parallel.json cucumber-js --tags \\\"@e2e\\\" -f json:report/'\"${SUITEST_CHILD_PROCESS%%|*}\"'.json -f summary",
-    "parallel:smoke": "suitest run --config-file=.suitestrc.parallel.json cucumber-js --tags \\\"@smoke\\\" -f json:report/'\"${SUITEST_CHILD_PROCESS%%|*}\"'.json -f summary",
-    "parallel:smoke:windows": "suitest run --config-file=.suitestrc.parallel.json cucumber-js --tags \\\"@smoke\\\" -f \\\"json:report/%SUITEST_CHILD_PROCESS:|=_pid_%.json\\\" -f summary",
+    "parallel": "suitest run --config-file=.suitestrc.parallel.json cucumber-js --tags \\\"@e2e\\\" -f json:report/'\"$SUITEST_DEVICE_ID\"'.json -f summary",
+    "parallel:smoke": "suitest run --config-file=.suitestrc.parallel.json cucumber-js --tags \\\"@smoke\\\" -f json:report/'\"$SUITEST_DEVICE_ID\"'.json -f summary",
+    "parallel:smoke:windows": "suitest run --config-file=.suitestrc.parallel.json cucumber-js --tags \\\"@smoke\\\" -f \\\"json:report/%SUITEST_DEVICE_ID%.json\\\" -f summary",
     "report:html": "node ./report.js"
   },
   "devDependencies": {
-    "cucumber": "^6.0.5",
-    "cucumber-html-reporter": "^5.5.0",
-    "cucumber-junit-formatter": "^0.2.2",
-    "suitest-js-api": "^3.0.2"
+    "@cucumber/cucumber": "^13.3.0",
+    "cucumber-html-reporter": "^7.2.0",
+    "suitest-js-api": "^4.2.4"
   }
 }

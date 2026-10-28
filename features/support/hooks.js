@@ -1,4 +1,4 @@
-const {AfterAll} = require('cucumber');
+const {AfterAll} = require('@cucumber/cucumber');
 const suitest = require('suitest-js-api');
 
 AfterAll(async () => {

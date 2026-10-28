@@ -1,5 +1,5 @@
 const suitest = require('suitest-js-api');
-const {When} = require('cucumber');
+const {When} = require('@cucumber/cucumber');
 
 /**
  * Remote Control
