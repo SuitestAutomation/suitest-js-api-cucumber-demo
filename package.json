@@ -10,9 +10,9 @@
     "start:home": "suitest run cucumber-js --tags \\\"@e2e and @home\\\" -f json:report/cucumber_report.json -f summary",
     "start:video": "suitest run cucumber-js --tags \\\"@e2e and @video\\\" -f json:report/cucumber_report.json -f summary",
     "start:smoke": "suitest run cucumber-js --tags \\\"@smoke\\\" -f json:report/cucumber_report.json -f summary",
-    "parallel": "suitest run --config-file=.suitestrc.parallel.json cucumber-js --tags \\\"@e2e\\\" -f json:report/'\"$SUITEST_DEVICE_ID\"'.json -f summary",
-    "parallel:smoke": "suitest run --config-file=.suitestrc.parallel.json cucumber-js --tags \\\"@smoke\\\" -f json:report/'\"$SUITEST_DEVICE_ID\"'.json -f summary",
-    "parallel:smoke:windows": "suitest run --config-file=.suitestrc.parallel.json cucumber-js --tags \\\"@smoke\\\" -f \\\"json:report/%SUITEST_DEVICE_ID%.json\\\" -f summary",
+    "parallel": "suitest run --config-file=config-examples/.suitestrc.parallel.json cucumber-js --tags \\\"@e2e\\\" -f json:report/'\"$SUITEST_DEVICE_ID\"'.json -f summary",
+    "parallel:smoke": "suitest run --config-file=config-examples/.suitestrc.parallel.json cucumber-js --tags \\\"@smoke\\\" -f json:report/'\"$SUITEST_DEVICE_ID\"'.json -f summary",
+    "parallel:smoke:windows": "suitest run --config-file=config-examples/.suitestrc.parallel.json cucumber-js --tags \\\"@smoke\\\" -f \\\"json:report/%SUITEST_DEVICE_ID%.json\\\" -f summary",
     "report:html": "node ./report.js"
   },
   "devDependencies": {
