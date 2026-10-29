@@ -1,4 +1,4 @@
-const {Given, Then} = require('cucumber');
+const {Given, Then} = require('@cucumber/cucumber');
 const suitest = require('suitest-js-api');
 const getTestId = require('../support/testEditorTests');
 const {assert} = suitest;
