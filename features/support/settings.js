@@ -1,4 +1,4 @@
-const {setDefaultTimeout, defineParameterType} = require('cucumber');
+const {setDefaultTimeout, defineParameterType} = require('@cucumber/cucumber');
 const {COMP} = require('suitest-js-api');
 
 const comparatorMap = {

@@ -1,5 +1,5 @@
 // File contains element-related assertion
-const {Then} = require('cucumber');
+const {Then} = require('@cucumber/cucumber');
 const suitest = require('suitest-js-api');
 const {assert, PROP} = suitest;
 
